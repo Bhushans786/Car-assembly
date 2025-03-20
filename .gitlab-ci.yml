@@ -2,7 +2,7 @@ stages:
   - build
   - test
 
-build-car:
+build_car:
   stage: build
   image: alpine
   script:
@@ -16,7 +16,7 @@ artifacts:
   paths:
     - build/
 
-test-car:
+test_car:
   stage: test
   image: alpine
   script:
