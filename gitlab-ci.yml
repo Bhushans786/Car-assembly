@@ -3,18 +3,22 @@ stages:
   - test
 
 build-car:
-  - stage: build
-  - mkdir build
-  - cd build
-  - touch car.txt
-  - echo 'chasis' > car.txt
-  - cat car.txt
+  stage: build
+  image: alpine
+  script:
+    - mkdir build
+    - cd build
+    - touch car.txt
+    - echo 'chasis' > car.txt
+    - cat car.txt
 
 artifacts:
-  - build/
+  paths: build/
 
 test-car:
-  - stage: test
-  - cd build
-  - test -f car.txt
-  - grep 'chasis' car.txt
+  stage: test
+  image: alpine
+  script:
+    - cd build
+    - test -f car.txt
+    - grep 'chasis' car.txt
