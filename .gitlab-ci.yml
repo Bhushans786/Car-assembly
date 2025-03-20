@@ -13,7 +13,8 @@ build-car:
     - cat car.txt
 
 artifacts:
-  paths: build/
+  paths:
+    - build/
 
 test-car:
   stage: test
